@@ -1,4 +1,4 @@
-package com.loiy.lemomall.modle;
+package com.loiy.lemomall.model;
 
 import android.os.Bundle;
 import android.view.View;

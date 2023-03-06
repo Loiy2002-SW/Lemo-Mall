@@ -5,4 +5,15 @@
     <string name="basket_str">BASKET</string>
     <string name="orders_str">ORDERS</string>
     <string name="logout_str">LOGOUT</string>
+    <string name="save_discount_str">SAVE 20%</string>
+    <string name="our_fruits_str">OUR FRUITS</string>
+
+    <string-array name="fruitNames">
+
+        <item name="0"> SUMMER FRUITS </item>
+        <item name="1"> NEW FRUITS </item>
+        <item name="2"> GREEN FRUITS </item>
+        <item name="3"> WINTER FRUITS </item>
+
+    </string-array>
 </resources>

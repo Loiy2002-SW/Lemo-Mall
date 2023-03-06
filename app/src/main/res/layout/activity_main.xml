@@ -8,10 +8,77 @@
     tools:context=".ui.HomeScreen">
 
     <include
+        android:id="@+id/home_base_include"
         layout="@layout/base_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/home_save_dis_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_save_discount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_base_include" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_discount_str"
+        android:textAlignment="center"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        android:letterSpacing="0.1"
+        app:layout_constraintBottom_toBottomOf="@+id/home_save_dis_imageview"
+        app:layout_constraintEnd_toEndOf="@+id/home_save_dis_imageview"
+        app:layout_constraintStart_toStartOf="@id/home_save_dis_imageview"
+        app:layout_constraintTop_toTopOf="@id/home_save_dis_imageview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_recycler_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_save_dis_imageview" />
+
+
+
+    <ImageView
+        android:id="@+id/home_our_fruits_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/bg_our_fruits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_recycler_horizontal" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/our_fruits_str"
+        android:textAlignment="center"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        android:letterSpacing="0.1"
+        app:layout_constraintBottom_toBottomOf="@+id/home_our_fruits_imageview"
+        app:layout_constraintEnd_toEndOf="@+id/home_our_fruits_imageview"
+        app:layout_constraintStart_toStartOf="@id/home_our_fruits_imageview"
+        app:layout_constraintTop_toTopOf="@id/home_our_fruits_imageview" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_recycler_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_our_fruits_imageview" />
 
 
 
