@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lemo Mall</string>
+    <string name="menu_str">MENU</string>
+    <string name="account_str">ACCOUNT</string>
+    <string name="basket_str">BASKET</string>
+    <string name="orders_str">ORDERS</string>
+    <string name="logout_str">LOGOUT</string>
 </resources>
