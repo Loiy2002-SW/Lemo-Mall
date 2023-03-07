@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/list_fruit_image_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="@drawable/bg_recycler_vertical"
+        android:src="@drawable/ic_apple"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/list_fruit_name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        android:textColor="@color/dark_blue"
+        android:gravity="center"
+        android:background="@drawable/bg_recycler_fruit_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_fruit_image_imageview" />
+
+    <ImageView
+        android:id="@+id/list_fruit_add_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_fruit_name_textview" />
+
+    <ImageView
+        android:id="@+id/list_fruit_remove_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_remove"
+        app:layout_constraintStart_toEndOf="@+id/list_fruit_add_imageview"
+        app:layout_constraintTop_toBottomOf="@id/list_fruit_name_textview" />
+
+    <TextView
+        android:id="@+id/list_fruit_price_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/list_fruit_remove_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/list_fruit_name_textview" />
+
+    <TextView
+        android:id="@+id/list_total_price_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:text="@string/total_str"
+        android:textColor="@color/dark_blue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_fruit_price_textview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

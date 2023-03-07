@@ -1,17 +1,17 @@
 package com.loiy.lemomall.model;
 
-public class RecyclerModel {
+public class RecyclerHomeModel {
 
 
     String fruitName;
     int fruitImage;
 
-    public RecyclerModel(String fruitName) {
+    public RecyclerHomeModel(String fruitName) {
 
         this.fruitName = fruitName;
     }
 
-    public RecyclerModel(String fruitName, int fruitImage) {
+    public RecyclerHomeModel(String fruitName, int fruitImage) {
 
         this.fruitName = fruitName;
         this.fruitImage = fruitImage;
