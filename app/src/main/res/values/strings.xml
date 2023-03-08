@@ -8,4 +8,17 @@
     <string name="clever_mind_str">2023.Clever Mind POB</string>
     <string name="healthy_mall_in_your_hand">Healthy Mall in Your Hand</string>
     <string name="the">THE</string>
+    <string name="email_hint_str">EMAIL</string>
+    <string name="password_hint_str">PASSWORD</string>
+    <string name="forget_pass_str">Forget Password!</string>
+    <string name="sign_up_str">Don\'t Have an Account? Join Us Here</string>
+    <string name="emptyField_str">Please fill in all field!</string>
+    <string name="welcome_str">"Welcome "</string>
+    <string name="invalidPass_str">Invalid Email or Password</string>
+    <string name="passWeak_str">Password too weak</string>
+    <string name="passLengthErrorMessage_str">Password length should be 8</string>
+    <string name="send_str">SEND</string>
+    <string name="title_of_forget_dialog_str">FORGET PASSWORD</string>
+    <string name="emailNotFound_str">This email does not exist</string>
+    <string name="check_your_email">Check Your Email To Reset Password</string>
 </resources>

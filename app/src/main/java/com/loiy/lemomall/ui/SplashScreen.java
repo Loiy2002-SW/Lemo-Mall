@@ -24,6 +24,7 @@ public class SplashScreen extends AppCompatActivity implements UserData {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
 
+        fillUserDataArrayList();
         //check the login state
         if(SharedPreferencesManager.getInstance(getApplicationContext()).getLogin()){
             isLogin = true;
