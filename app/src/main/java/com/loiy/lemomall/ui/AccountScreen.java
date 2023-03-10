@@ -1,64 +1,83 @@
 package com.loiy.lemomall.ui;
 
-import static com.loiy.lemomall.data.UserData.emails_arrayList;
-import static com.loiy.lemomall.data.UserData.fullNames_arrayList;
-import static com.loiy.lemomall.data.UserData.passwords_arrayList;
-import static com.loiy.lemomall.data.UserData.phoneNumbers_arrayList;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loiy.lemomall.R;
 import com.loiy.lemomall.data.CheckInputs;
-import com.loiy.lemomall.sharedPreference.SharedPreferencesManager;
+import com.loiy.lemomall.data.UserData;
+import com.loiy.lemomall.modle.BaseMenu;
 
 import java.util.regex.Pattern;
 
-public class SignUpScreen extends AppCompatActivity {
+public class AccountScreen extends BaseMenu implements UserData {
 
     RadioGroup radioGroup;
     EditText editTextFullName, editTextEmail, editTextPhone, editTextPassword;
-    ImageView ivSignUp;
+    TextView tvSave;
 
-    ImageView ivBack_SignUp;
     String fullName, email, phone, password;
+    int index = -1;
 
     //an instance of CheckInputs to make validations
     CheckInputs checker = CheckInputs.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //remove the title
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_sign_up_screen);
+        setContentView(R.layout.activity_account_screen);
+
+        //this method will show the more_option icon
+        showViews(false, getString(R.string.account_word_str));
+
         // initialization
-        radioGroup = findViewById(R.id.sign_up_radio_group);
-        editTextFullName = findViewById(R.id.sign_up_edittext_full_name);
-        editTextEmail = findViewById(R.id.sign_up_edittext_email);
-        editTextPhone = findViewById(R.id.sign_up_edittext_phone);
-        editTextPassword = findViewById(R.id.sign_up_edittext_password);
+        radioGroup = findViewById(R.id.account_radio_group);
+        editTextFullName = findViewById(R.id.account_edittext_full_name);
+        editTextEmail = findViewById(R.id.account_edittext_email);
+        editTextPhone = findViewById(R.id.account_edittext_phone);
+        editTextPassword = findViewById(R.id.account_edittext_password);
 
 
-        ivSignUp = findViewById(R.id.sign_up_imageview);
-        ivBack_SignUp = findViewById(R.id.sign_up_iv_back);
+        tvSave = findViewById(R.id.account_save_textview);
 
-        ivBack_SignUp.setOnClickListener(this::OnBackToLogin);
 
-        ivSignUp.setOnClickListener(this::OnSignUpImageViewClick);
 
+
+        tvSave.setOnClickListener(this::OnSaveClick);
+    }
+
+    private void OnSaveClick(View view) {
+
+        if (!fullNameValidate()
+                || !phoneValidate() || !emailValidate() || !validatePassword() || !handleRadioButton()
+        )
+            return;
+
+        else {
+            if (checkEmailIsExists()) {
+
+                fullNames_arrayList.set(index, fullName);
+                phoneNumbers_arrayList.set(index, phone);
+                emails_arrayList.set(index, email);
+                passwords_arrayList.set(index, password);
+                setFieldsToEmpty();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.updateInfoSuccessfully_str), Toast.LENGTH_LONG).show();
+            }else{
+                editTextEmail.setError(getResources().getString(R.string.emailNotFound_str));
+
+            }
+
+        }
     }
 
     //check fullName text field
@@ -164,50 +183,7 @@ public class SignUpScreen extends AppCompatActivity {
             Toast.makeText(this, getResources().getString(R.string.choose_payment), Toast.LENGTH_LONG).show();
             return false;
         }
-            return true;
-
-    }
-
-    //go to home activity
-    private void goToHomeActivity()
-    {
-        Intent toHome = new Intent(SignUpScreen.this, HomeScreen.class);
-        startActivity(toHome);
-        finish();
-
-    }//end of goToHomeActivity()
-
-    private void OnBackToLogin(View view) {
-
-        finish();
-    }
-
-    private void OnSignUpImageViewClick(View view) {
-
-
-
-        if (!fullNameValidate()
-                || !phoneValidate() || !emailValidate() || !validatePassword() || !handleRadioButton()
-        )
-            return;
-
-        else {
-            if (!checkEmailIsExists()) {
-                emails_arrayList.add(email);
-                fullNames_arrayList.add(fullName);
-                phoneNumbers_arrayList.add(phone);
-                passwords_arrayList.add(password);
-                goToHomeActivity();
-                Toast.makeText(SignUpScreen.this, getResources().getString(R.string.welcome_str) + fullName, Toast.LENGTH_LONG).show();
-                SharedPreferencesManager.getInstance(this).saveLogin(true);
-
-            }else{
-                editTextEmail.setError(getResources().getString(R.string.accountExist_str));
-                //Toast.makeText(SignUpScreen.this, getResources().getString(R.string.account_exist), Toast.LENGTH_LONG).show();
-
-            }
-
-        }
+        return true;
 
     }
 
@@ -218,6 +194,7 @@ public class SignUpScreen extends AppCompatActivity {
 
             if(emails_arrayList.get(i).equals(email))
             {
+                index = i;
                 return true;
 
             }
@@ -229,6 +206,12 @@ public class SignUpScreen extends AppCompatActivity {
 
 
     }//end of checkEmailIsExists()
+    private void setFieldsToEmpty(){
+        editTextFullName.setText("");
+        editTextPhone.setText("");
+        editTextEmail.setText("");
+        editTextPassword.setText("");
 
+    }
 
 }
