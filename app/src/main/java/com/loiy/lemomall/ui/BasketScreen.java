@@ -18,7 +18,9 @@ import com.loiy.lemomall.model.RecyclerFruitsModel;
 
 import java.time.format.TextStyle;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class BasketScreen extends BaseMenu{
 
@@ -26,6 +28,7 @@ public class BasketScreen extends BaseMenu{
     RecyclerView basket_recycler;
     static TextView basket_total_price_textview, basket_orders_textview;
     EditText basket_address_edittext;
+    private boolean ordered = false;
 
 
     public static void setTotalOfAllFruits(double totalOfAllFruits) {
@@ -71,7 +74,13 @@ public class BasketScreen extends BaseMenu{
             }
         }
 
-        basket_total_price_textview.setText(RecyclerBasketAdapter.wholeTotal +"JD");
+        if(fruitBasket.size() != 0){
+            basket_total_price_textview.setText(RecyclerBasketAdapter.wholeTotal +"JD");
+        }else {
+            Toast.makeText(this, getString(R.string.add_some_fruit_str), Toast.LENGTH_SHORT).show();
+        }
+
+
 
         // prepare the adapter to set it to the recycler view.
         RecyclerBasketAdapter recyclerBasketAdapter = new RecyclerBasketAdapter(getApplicationContext(), fruitBasket);
@@ -87,17 +96,39 @@ public class BasketScreen extends BaseMenu{
     //when order is clicked.
     private void onOrderClicked(View v) {
 
-        if(!basket_address_edittext.getText().toString().isEmpty()){
-
-            Intent goToOrder = new Intent(getApplicationContext(), OrdersScreen.class);
-            startActivity(goToOrder);
-            //finish();
-
-        }else {
+        if(basket_address_edittext.getText().toString().isEmpty() ){
 
             Toast.makeText(this, getString(R.string.empty_address_str), Toast.LENGTH_SHORT).show();
+
+
+        }else if(fruitBasket.size() == 0){
+
+            Toast.makeText(this, getString(R.string.add_some_fruit_str), Toast.LENGTH_SHORT).show();
+
+        }else {
+            ordered = true;
+
+            Random rand = new Random();
+            int randomNum = rand.nextInt(90000000) + 10000000;
+
+            OrdersScreen.fruitsModelList.add(new RecyclerFruitsModel(RecyclerBasketAdapter.wholeTotal+"", randomNum+""));
+            Intent goToOrder = new Intent(getApplicationContext(), AcceptanceOrderScreen.class);
+            Arrays.fill(GreenFruits.numberOfAdditions, 0);
+            Arrays.fill(RecyclerFruitsAdapter.staticFruitArray, 0);
+
+            startActivity(goToOrder);
+            finish();
 
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(!ordered){
+            Toast.makeText(this, getString(R.string.canceled_str), Toast.LENGTH_LONG).show();
+        }
+
+
+    }
 }

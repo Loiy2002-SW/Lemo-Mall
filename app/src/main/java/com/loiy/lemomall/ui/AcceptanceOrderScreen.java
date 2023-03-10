@@ -3,7 +3,7 @@ package com.loiy.lemomall.ui;
 import android.os.Bundle;
 
 import com.loiy.lemomall.R;
-import com.loiy.lemomall.modle.BaseMenu;
+import com.loiy.lemomall.model.BaseMenu;
 
 public class AcceptanceOrderScreen extends BaseMenu {
 

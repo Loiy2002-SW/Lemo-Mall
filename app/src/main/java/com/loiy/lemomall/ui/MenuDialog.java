@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.loiy.lemomall.R;
 import com.loiy.lemomall.model.BaseMenu;
+import com.loiy.lemomall.sharedPreference.SharedPreferencesManager;
 
 
 public class MenuDialog extends AppCompatDialogFragment {
@@ -65,6 +66,15 @@ public class MenuDialog extends AppCompatDialogFragment {
 
                 Toast.makeText(getContext(), getString(R.string.account_str), Toast.LENGTH_SHORT).show();
 
+                Toast.makeText(getContext(), getString(R.string.basket_str), Toast.LENGTH_SHORT).show();
+                getActivity().startActivity(new Intent(getActivity(), AccountScreen.class));
+
+                if(getActivity().getClass().getSimpleName().equals("HomeScreen")){
+                    closeFragment();
+                }else {
+                    getActivity().finish();
+                }
+
                 break;
 
             // open basket activity when click on basket icon.
@@ -85,13 +95,24 @@ public class MenuDialog extends AppCompatDialogFragment {
             case R.id.menu_dialog_orders_textview:
 
                 Toast.makeText(getContext(), getString(R.string.orders_str), Toast.LENGTH_SHORT).show();
+                getActivity().startActivity(new Intent(getActivity(), OrdersScreen.class));
 
+                if(getActivity().getClass().getSimpleName().equals("HomeScreen")){
+                    closeFragment();
+                }else {
+                    getActivity().finish();
+                }
                 break;
 
             // logout and go to the login screen.
             case R.id.menu_dialog_logout_textview:
 
                 Toast.makeText(getContext(), getString(R.string.logout_str), Toast.LENGTH_SHORT).show();
+                getActivity().startActivity(new Intent(getActivity(), LoginScreen.class));
+
+                requireActivity().finishAffinity();
+
+                SharedPreferencesManager.getInstance(getContext()).saveLogin(false);
 
                 break;
 

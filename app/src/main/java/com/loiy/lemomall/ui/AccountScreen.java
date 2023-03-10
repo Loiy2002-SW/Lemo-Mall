@@ -1,13 +1,9 @@
 package com.loiy.lemomall.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +11,7 @@ import android.widget.Toast;
 import com.loiy.lemomall.R;
 import com.loiy.lemomall.data.CheckInputs;
 import com.loiy.lemomall.data.UserData;
-import com.loiy.lemomall.modle.BaseMenu;
+import com.loiy.lemomall.model.BaseMenu;
 
 import java.util.regex.Pattern;
 

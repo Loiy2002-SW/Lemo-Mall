@@ -15,6 +15,7 @@ import com.loiy.lemomall.R;
 import com.loiy.lemomall.animation.ViewAnimationUtil;
 import com.loiy.lemomall.model.RecyclerFruitsModel;
 import com.loiy.lemomall.ui.BasketScreen;
+import com.loiy.lemomall.ui.GreenFruits;
 
 import java.util.List;
 
@@ -60,13 +61,6 @@ public class RecyclerBasketAdapter extends RecyclerView.Adapter<RecyclerBasketAd
             holder.list_fruit_price_textview.setText(fruitList.get(position).getFruitPrice() + "JD");
         }
 
-//            wholeTotal += total;
-//            isNotCalculated[position] = false;
-//            Toast.makeText(mContext, ""+ position, Toast.LENGTH_SHORT).show();
-
-
-
-
 
         holder.list_fruit_add_imageview.setOnClickListener(v -> {
 
@@ -84,6 +78,7 @@ public class RecyclerBasketAdapter extends RecyclerView.Adapter<RecyclerBasketAd
             BasketScreen.setTotalOfAllFruits(wholeTotal);
 
 
+            GreenFruits.numberOfAdditions[position] = fruitList.get(position).getNumberOfAdditions();
         });
 
         holder.list_fruit_remove_imageview.setOnClickListener(v -> {
@@ -122,6 +117,7 @@ public class RecyclerBasketAdapter extends RecyclerView.Adapter<RecyclerBasketAd
             }
 
 
+            GreenFruits.numberOfAdditions[position] = fruitList.get(position).getNumberOfAdditions();
 
         });
 

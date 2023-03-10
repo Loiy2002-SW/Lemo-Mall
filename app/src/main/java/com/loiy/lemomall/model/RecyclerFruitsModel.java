@@ -5,6 +5,15 @@ public class RecyclerFruitsModel {
     int fruitImage, numberOfAdditions;
     String fruitName, fruitPrice;
 
+    String orderId;
+
+
+
+    public RecyclerFruitsModel(String fruitPrice, String orderId) {
+        this.fruitPrice = fruitPrice;
+        this.orderId = orderId;
+    }
+
     public RecyclerFruitsModel(int fruitImage, String fruitName, String fruitPrice, int numberOfAdditions) {
         this.fruitImage = fruitImage;
         this.fruitName = fruitName;
@@ -30,5 +39,8 @@ public class RecyclerFruitsModel {
 
     public void setNumberOfAdditions(int numberOfAdditions) {
         this.numberOfAdditions = numberOfAdditions;
+    }
+    public String getOrderId() {
+        return orderId;
     }
 }

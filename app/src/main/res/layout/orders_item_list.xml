@@ -10,16 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="@drawable/bg_recycler_vertical"
         android:padding="20dp"
-        android:background="@drawable/bg_recycler_vertical_small"
-        android:src="@drawable/ic_apple"
         android:scaleType="center"
+        android:src="@drawable/ic_fruits"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/list_delete_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintStart_toStartOf="@id/list_fruit_image_imageview"
+        app:layout_constraintTop_toTopOf="@id/list_fruit_image_imageview" />
+
+
+
     <TextView
-        android:id="@+id/list_fruit_name_textview"
+        android:id="@+id/list_id_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -27,42 +39,10 @@
         android:textSize="25sp"
         android:textColor="@color/dark_blue"
         android:gravity="center"
-        android:background="@drawable/bg_recycler_fruit_name_small"
+        android:background="@drawable/bg_recycler_fruit_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list_fruit_image_imageview" />
-
-    <ImageView
-        android:id="@+id/list_fruit_add_imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/ic_add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/list_fruit_name_textview" />
-
-    <ImageView
-        android:id="@+id/list_fruit_remove_imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:src="@drawable/ic_remove"
-        app:layout_constraintStart_toEndOf="@+id/list_fruit_add_imageview"
-        app:layout_constraintTop_toBottomOf="@id/list_fruit_name_textview" />
-
-    <TextView
-        android:id="@+id/list_fruit_price_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="4dp"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@color/dark_blue"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/list_fruit_remove_imageview"
-        app:layout_constraintTop_toBottomOf="@+id/list_fruit_name_textview" />
 
     <TextView
         android:id="@+id/list_total_price_textview"
@@ -73,9 +53,9 @@
         android:text="@string/total_str"
         android:textColor="@color/dark_blue"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_fruit_price_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/list_id_textview" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
