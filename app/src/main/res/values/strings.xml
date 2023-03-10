@@ -31,6 +31,15 @@
     <string name="cash_str">CASH</string>
     <string name="visa_str">VISA</string>
     <string name="choose_payment">Please choose the payment method.</string>
+    <string name="account_word_str">ACCOUNT</string>
+    <string name="save_str">SAVE</string>
+    <string name="updateInfoSuccessfully_str">Update your info successfully</string>
+    <string name="home_word_str">HOME</string>
+    <string name="thanks_order_str">Thank You For Your Order\n You Can Check Your Order List Form\n Orders Screen.</string>
+    <string name="get_chance_str">GET A CHANCE\n TO WIN A FREE\n COPNOS!</string>
+    <string name="our_price_str">Our Paid Copons Prices</string>
+    <string name="prices_str">$150 / $100 / $80 / $50\n $30 / $20 / $10 / $5</string>
+    <string name="about_str">+ 9 6 2 7 9 5 3 4 7 3 4 1\n J O R D A N - A M M A N\n C l e v e r M i n d P O B I C T</string>
     <string name="save_discount_str">SAVE 20%</string>
     <string name="our_fruits_str">OUR FRUITS</string>
     <string name="summer_fruits_str">SUMMER FRUITS</string>
