@@ -20,9 +20,13 @@ import java.util.List;
 public class RecyclerFruitsAdapter extends RecyclerView.Adapter<RecyclerFruitsAdapter.RecyclerHolder> {
 
     // fields declaration.
-    static Context mContext;
+    Context mContext;
     List<RecyclerFruitsModel> fruitList;
 
+
+    //public static int[] addThisFruit = new int[8];
+    //this array will contain the user orders to be shown in the Orders screen.
+    public static int[] staticFruitArray = new int[8];
 
     public RecyclerFruitsAdapter(Context mContext, List<RecyclerFruitsModel> fruitList) {
         this.mContext = mContext;
@@ -30,8 +34,6 @@ public class RecyclerFruitsAdapter extends RecyclerView.Adapter<RecyclerFruitsAd
     }
 
 
-    //this list will contain the user orders to be shown in the Orders screen.
-    public static int[] staticFruitArray = new int[mContext.getResources().getStringArray(R.array.fruitNames).length];
 
     @NonNull
     @Override
@@ -85,7 +87,7 @@ public class RecyclerFruitsAdapter extends RecyclerView.Adapter<RecyclerFruitsAd
                 staticFruitArray[position] -=1;
 
             }else if (fruitList.get(position).getNumberOfAdditions() == 0){
-                Toast.makeText(mContext, mContext.getString(R.string.aleady_zero_str), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, mContext.getString(R.string.already_zero_str), Toast.LENGTH_SHORT).show();
 
             }else {
 

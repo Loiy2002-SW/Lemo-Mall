@@ -1,6 +1,9 @@
 package com.loiy.lemomall.ui;
 
+import android.app.ActivityManager;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +15,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.loiy.lemomall.R;
-
+import com.loiy.lemomall.model.BaseMenu;
 
 
 public class MenuDialog extends AppCompatDialogFragment {
@@ -66,6 +71,13 @@ public class MenuDialog extends AppCompatDialogFragment {
             case R.id.menu_dialog_basket_textview:
 
                 Toast.makeText(getContext(), getString(R.string.basket_str), Toast.LENGTH_SHORT).show();
+                getActivity().startActivity(new Intent(getActivity(), BasketScreen.class));
+
+                if(getActivity().getClass().getSimpleName().equals("HomeScreen")){
+                    closeFragment();
+                }else {
+                    getActivity().finish();
+                }
 
                 break;
 
@@ -87,6 +99,11 @@ public class MenuDialog extends AppCompatDialogFragment {
         }
     }
 
-
+    public void closeFragment() {
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.remove(this);
+        fragmentTransaction.commit();
+    }
 
 }

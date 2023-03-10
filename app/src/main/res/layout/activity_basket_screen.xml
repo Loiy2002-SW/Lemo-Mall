@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BasketScreen">
+
+    <include
+        android:id="@+id/basket_base_include"
+        layout="@layout/base_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/basket_recycler"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/list_fruit_image_imageview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/basket_base_include" />
+
+    <TextView
+        android:id="@+id/basket_total_price_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        android:textColor="@color/dark_blue"
+        android:gravity="center"
+        android:background="@drawable/bg_recycler_fruit_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basket_base_include" />
+
+    <ImageView
+        android:id="@+id/list_fruit_image_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/bg_recycler_vertical"
+        android:padding="20dp"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/basket_total_price_textview" />
+
+
+    <TextView
+        android:id="@+id/basket_address_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/address_str"
+        android:textColor="@color/dark_blue"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/list_fruit_image_imageview"
+        app:layout_constraintStart_toStartOf="@+id/list_fruit_image_imageview"
+        app:layout_constraintTop_toTopOf="@+id/list_fruit_image_imageview" />
+
+    <EditText
+        android:id="@+id/basket_address_edittext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="@+id/list_fruit_image_imageview"
+        app:layout_constraintStart_toStartOf="@+id/list_fruit_image_imageview"
+        app:layout_constraintTop_toBottomOf="@id/basket_address_textview"/>
+
+    <TextView
+        android:id="@+id/basket_orders_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/ic_order_arrow"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:text="@string/order_now_str"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_fruit_image_imageview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

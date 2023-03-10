@@ -12,7 +12,11 @@
     <string name="winter_fruits_str">WINTER FRUITS</string>
     <string name="green_fruits_str">GREEN FRUITS</string>
     <string name="total_str">"Total: "</string>
-    <string name="aleady_zero_str">The number you ordered is already zero</string>
+    <string name="already_zero_str">The number you ordered is already zero</string>
+    <string name="address_str">ADDRESS</string>
+    <string name="order_now_str">ORDER NOW</string>
+    <string name="canceled_str">Canceled</string>
+    <string name="empty_address_str">You have to fill in your address</string>
 
     <string-array name="fruitTypeNames">
 
