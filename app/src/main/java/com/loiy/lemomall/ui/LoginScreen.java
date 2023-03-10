@@ -74,7 +74,7 @@ public class LoginScreen extends AppCompatActivity implements UserData {
             startActivity(new Intent(LoginScreen.this, HomeScreen.class));
 
             SharedPreferencesManager.getInstance(this).saveLogin(true);
-
+            finish();
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.welcome_str) + fullNames_arrayList.get(index) + " (:", Toast.LENGTH_LONG).show();
 
         } else {
