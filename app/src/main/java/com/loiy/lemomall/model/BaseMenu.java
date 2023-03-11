@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.loiy.lemomall.R;
 import com.loiy.lemomall.ui.MenuDialog;
@@ -29,6 +30,7 @@ public abstract class BaseMenu extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.base_menu);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 /*
        *Important notes:
          - I did not write any code here because this method will be overridden by child classes.
