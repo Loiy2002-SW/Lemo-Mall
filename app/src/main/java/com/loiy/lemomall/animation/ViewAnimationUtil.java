@@ -68,4 +68,8 @@ public class ViewAnimationUtil {
                     }
                 });
     }
+
+    public static void animateViewInvisible(final View view,  final AnimatorListenerAdapter listener) {
+        view.setVisibility(View.INVISIBLE);
+    }
 }

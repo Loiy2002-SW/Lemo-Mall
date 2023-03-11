@@ -91,7 +91,7 @@ public class RecyclerFruitsAdapter extends RecyclerView.Adapter<RecyclerFruitsAd
             if(fruitList.get(position).getNumberOfAdditions() == 1){
 
                 // set the list_total_price_textview to gone with an animation
-                ViewAnimationUtil.animateViewInvisible(holder.list_total_price_textview, 1000, null);
+                ViewAnimationUtil.animateViewInvisible(holder.list_total_price_textview, null);
 
                 fruitList.get(position).setNumberOfAdditions(fruitList.get(position).getNumberOfAdditions()-1);
                 holder.list_fruit_price_textview.setText(fruitList.get(position).getFruitPrice() + "JD");
