@@ -46,7 +46,7 @@ public class SplashScreen extends AppCompatActivity implements UserData {
 
 
             }
-        },4000);
+        },3000);
 
     }
 

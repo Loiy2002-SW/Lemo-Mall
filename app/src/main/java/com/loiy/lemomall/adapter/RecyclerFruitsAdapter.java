@@ -68,7 +68,7 @@ public class RecyclerFruitsAdapter extends RecyclerView.Adapter<RecyclerFruitsAd
         holder.list_fruit_add_imageview.setOnClickListener(v -> {
 
             // set the list_total_price_textview to Visible with an animation
-            if(fruitList.get(position).getNumberOfAdditions() > 0){
+            if(holder.list_total_price_textview.getVisibility() == View.INVISIBLE){
                 ViewAnimationUtil.animateViewVisible(holder.list_total_price_textview, 1500,null);
             }
 
