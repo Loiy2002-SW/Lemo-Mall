@@ -16,12 +16,12 @@
     <ImageView
         android:id="@+id/iv_logo_splash"
         android:layout_width="wrap_content"
-        android:layout_height="450dp"
-        android:layout_marginBottom="420dp"
-        android:src="@drawable/ic_logo"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="456dp"
+        android:src="@drawable/ic_logo_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -32,7 +32,7 @@
         android:layout_marginTop="248dp"
         android:gravity="center"
         android:text="@string/healthy_mall_in_your_hand"
-        android:textColor="@color/yellow"
+        android:textColor="@color/light_blue"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
